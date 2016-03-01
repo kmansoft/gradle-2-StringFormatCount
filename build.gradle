@@ -13,7 +13,7 @@ apply plugin: 'android'
 
 android {
 	compileSdkVersion 23
-	buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+	buildToolsVersion 23.0.2
 	
     lintOptions {
 		checkReleaseBuilds true
