@@ -24,6 +24,6 @@ Test app for issue with Lint StringFormatCount in gradle tools 2.0
 
 No errors
 
-The way I have test_string and test_string_en may seem weird, but the idea is to: 1) provide an always accessing English string (if the user chooses a setting to "always send this text in English") and 2) to use it as a fallback for other languages.
+The way I have test_string and test_string_en may seem weird, but the idea is to: 1) provide an always accessible English string (if the user chooses a setting to "always send this text in English") and 2) to use it as a fallback for other languages. The text value in question is quite long, so I'd rather not duplicate it.
 
 Usually there will be translations for test_string (and the _en value will remain accessible from code, no matter what the language), but not always (and then test_string will pick up the _en's value).
