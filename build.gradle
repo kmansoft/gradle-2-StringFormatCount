@@ -1,0 +1,41 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+        classpath 'com.android.tools.build:gradle:2.0+'
+	}
+}
+
+apply plugin: 'android'
+
+
+android {
+	compileSdkVersion 23
+	buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+	
+    lintOptions {
+		checkReleaseBuilds true
+		check 'NewApi', 'StringFormatCount', 'StringFormatInvalid', 'ManifestOrder', 'WrongManifestParent'
+		fatal 'NewApi', 'StringFormatCount', 'StringFormatInvalid', 'ManifestOrder', 'WrongManifestParent'
+		textReport true
+		textOutput 'stdout'
+		xmlReport false
+		htmlReport false
+	}
+	
+	sourceSets {
+		main {
+			manifest.srcFile 'AndroidManifest.xml'
+			java.srcDirs = ['src/main']
+			res.srcDirs = ['res']
+			assets.srcDirs = ['assets']
+		}
+	}
+
+    buildTypes {
+        release {
+		}
+	}
+}
