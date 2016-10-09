@@ -1,5 +1,38 @@
 # gradle-2-StringFormatCount
-Test app for issue with Lint StringFormatCount in gradle tools 2.0
+Test app for issue with Lint StringFormatCount in gradle tools 2.*
+
+### When building with tools 2.2:
+
+Actual version is 2.2.1
+
+> $ gradle clean lintDebug
+> :clean
+> :preBuild UP-TO-DATE
+> :preDebugBuild UP-TO-DATE
+> :checkDebugManifest
+> :prepareDebugDependencies
+> :compileDebugAidl
+> :compileDebugRenderscript
+> :generateDebugBuildConfig
+> :generateDebugResValues
+> :generateDebugResources
+> :mergeDebugResources
+> :processDebugManifest
+> :processDebugResources
+> warning: string 'test_string' has no default translation.
+> 
+> :generateDebugSources
+> :incrementalDebugJavaCompilationSafeguard
+> :compileDebugJavaWithJavac
+> :compileLint
+> :lintDebug
+> No issues found.
+> 
+> BUILD SUCCESSFUL
+
+So Lint is fixed (good), but now it's the resource packager:
+
+> warning: string 'test_string' has no default translation.
 
 ### When building with tools 2.0:
 
